@@ -1,6 +1,6 @@
 #!/bin/sh
 
-build_version=6.1
+build_version=7
 openssl_build_version=3
 cyrus_sasl_build_version=4
 iconv_build_version=1
@@ -53,8 +53,8 @@ unzip -qo "$current_dir/dependencies/iconv/iconv-android-$iconv_build_version.zi
 
 cd "$current_dir/.."
 tar xzf "$current_dir/../build-mac/autogen-result.tar.gz"
-./autogen.sh
-make
+./configure
+make prepare
 
 # Copy public headers to include
 cp -r include/libetpan "$current_dir/include"
